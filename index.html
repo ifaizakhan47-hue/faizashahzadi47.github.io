@@ -1,0 +1,348 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My CV Portfolio</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #ff8fa3; /* ✅ YOUR COLOR */
+    color: #2b2b2b;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    color: #c9184a;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff4d6d;
+}
+
+/* ================= HERO ================= */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 8%;
+    flex-wrap: wrap;
+}
+
+.hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.2rem;
+    color: #ffffff;
+}
+
+.hero p {
+    margin: 15px 0;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.hero-img img {
+    border-radius: 50%;
+    width: 200px;
+    border: 5px solid white;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #c9184a, #ff4d6d);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.07);
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    padding: 60px 8%;
+    text-align: center;
+    background: #fff0f3;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.section h2 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    color: #c9184a;
+}
+
+/* ================= CARDS ================= */
+.card, .edu-card, .project-card {
+    background: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    border-left: 5px solid #ff4d6d;
+}
+
+.card:hover, .project-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ================= ABOUT ================= */
+.highlights {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ================= EDUCATION ================= */
+.edu-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ================= SKILLS ================= */
+.skill {
+    max-width: 500px;
+    margin: 15px auto;
+    text-align: left;
+}
+
+.progress {
+    background: #ffd6e0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress div {
+    height: 10px;
+    background: linear-gradient(90deg, #ff4d6d, #c9184a);
+}
+
+/* ================= PROJECTS ================= */
+.project-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #c9184a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ================= CONTACT ================= */
+.contact-container {
+    max-width: 500px;
+    margin: auto;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ffd6e0;
+}
+
+form button {
+    background: linear-gradient(45deg, #c9184a, #ff4d6d);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+form button:hover {
+    opacity: 0.9;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <nav class="navbar">
+        <h2 class="logo">MyPortfolio</h2>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+    <div>
+        <h1>Faiza Shahzadi</h1>
+        <p>Aspiring Developer | Creative Thinker</p>
+        <a href="#contact" class="btn">Contact Me</a>
+    </div>
+
+    <div class="hero-img">
+        <img src="download (1).jpeg"
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I am a dedicated student with a strong interest in learning and personal growth.I enjoy understanding new concepts,helping others and taking on small challenges that make me better over time.</p>
+
+    <div class="highlights">
+        <div class="card">💡 Creative Thinker</div>
+        <div class="card">🚀 Fast Learner</div>
+        <div class="card">🎯 Goal Oriented</div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+    <h2>Education</h2>
+    <div class="edu-container">
+        <div class="edu-card">
+            <h3>Matric</h3>
+            <p>G.Girls High School Chak Sada</p>
+        </div>
+        <div class="edu-card">
+            <h3>Intermediate</h3>
+            <p>Punjab Group Of Colleges</p>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+    <h2>Skills</h2>
+
+    <div class="skill">
+        <p>Leadership and Teamwork</p>
+        <div class="progress"><div style="width:90%"></div></div>
+    </div>
+    
+    <div class="skill">
+        <p>Customer Dealing and Good Communication</p>
+        <div class="progress"><div style="width:93%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Cash Handling</p>
+        <div class="progress"><div style="width:85%"></div></div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="project-container">
+        <div class="project-card">
+            <h3>Project One</h3>
+            <p>Short description</p>
+            <a href="#">View Project</a>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <div class="contact-container">
+        <p>Email: ifaizakhan16@gmail.com</p>
+
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Faiza Shahzadi</p>
+</footer>
+
+</body>
+</html>
+```
